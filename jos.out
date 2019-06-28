@@ -1,0 +1,54 @@
+*** Now run 'make gdb'.
+***
+c[?7l[2J[0mSeaBIOS (version rel-1.12.1-0-ga5cab58e9a3f-prebuilt.qemu.org)
+
+
+iPXE (http://ipxe.org) 00:03.0 C980 PCI2.10 PnP PMM+07F91410+07EF1410 C980
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from Hard Disk..6828 decimal is 015254 octal!
+pading space in the right to number 22: 22      .
+chnum1: 29 chnum2: 30
+
+error! writing through NULL pointer! (%n argument)
+
+warning! The value %n argument pointed to has been overflowed!
+chnum1: -1
+show me the sign: +1024, -1024
+entering test_backtrace 5
+entering test_backtrace 4
+entering test_backtrace 3
+entering test_backtrace 2
+entering test_backtrace 1
+entering test_backtrace 0
+Stack backtrace:
+  eip f0100087 ebp f0110df8 args 00000000 00000000 00000000 0000001a f0100cd8
+     kern/init.c:19 test_backtrace+71
+  eip f0100069 ebp f0110e18 args 00000000 00000001 f0110e58 0000001a f0100cd8
+     kern/init.c:16 test_backtrace+41
+  eip f0100069 ebp f0110e38 args 00000001 00000002 f0110e78 0000001a f0100cd8
+     kern/init.c:16 test_backtrace+41
+  eip f0100069 ebp f0110e58 args 00000002 00000003 f0110e98 0000001a f0100cd8
+     kern/init.c:16 test_backtrace+41
+  eip f0100069 ebp f0110e78 args 00000003 00000004 00000000 0000001f 00000000
+     kern/init.c:16 test_backtrace+41
+  eip f0100069 ebp f0110e98 args 00000004 00000005 00000000 f0110ede f0110fdf
+     kern/init.c:16 test_backtrace+41
+  eip f01001e3 ebp f0110eb8 args 00000005 00000400 fffffc00 f0110fde 00000000
+     kern/init.c:52 i386_init+326
+  eip f010003e ebp f0110ff8 args 00112021 00000000 00000000 00000000 00000000
+     kern/entry.S:83 <unknown>+0
+Backtrace success
+Overflow success
+leaving test_backtrace 0
+leaving test_backtrace 1
+leaving test_backtrace 2
+leaving test_backtrace 3
+leaving test_backtrace 4
+leaving test_backtrace 5
+测试八进制数+1024：02000
+测试八进制数-1024：037777776000
+测试八进制数+1024：1024
+测试八进制数-1024：-1024
+qemu-system-i386: terminating on signal 15 from pid 29870 (make)
